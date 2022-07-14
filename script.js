@@ -1,4 +1,5 @@
-const books = [];
+let books = [];
+if (localStorage.books) books = JSON.parse(localStorage.getItem('books'));
 
 const appi = document.getElementById("list-cr");
 
@@ -22,22 +23,11 @@ document.querySelectorAll(".remove").forEach((element) => element.addEventListen
     const getindex = event.currentTarget.dataset.index;
     books.splice(parseInt(getindex, 5), 1);
     create();
+    localStorage.setItem('books', JSON.stringify(books));
 }));
 }
 
 create();
-
-appi.addEventListener('click', (event) => {
- if(event.target.tagName === "BUTTON"){
-   const button = event.target;
-   const li = button.parentNode;
-   const ul = li.parentNode;
-   appi = ul.parentNode;
-   if(button.textContent === 'remove'){
-       appi.removeChild(ul);
-   }
- }   
-});
 
 const newtitle = document.getElementById("title");
 const auth = document.getElementById("author");
@@ -48,6 +38,7 @@ function addbooks() {
     book.author = auth.value;
     books.push(book);
     create();
+    localStorage.setItem('books', JSON.stringify(books));
 }
 
 const addbtn = document.getElementById("add");
