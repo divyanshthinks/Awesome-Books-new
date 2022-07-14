@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://divyanshthinks.github.io/Awesome-Books/)
+[Live Demo Link](https://divyanshthinks.github.io/Awesome-Books-new/)
 
 
 ## Getting Started
