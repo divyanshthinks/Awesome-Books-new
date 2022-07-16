@@ -37,8 +37,8 @@ class Bookadd {
     this.books.push(book);
     this.additems();
     localStorage.setItem('books', JSON.stringify(this.books));
-    titin.value = '';
-    autna.value = '';
+    booktitle.value = '';
+    auth.value = '';
   }
 
   removeBooks(event) {
